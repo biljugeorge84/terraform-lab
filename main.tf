@@ -1,16 +1,26 @@
-terraform { 
-  cloud { 
-    
-    organization = "tejas-pyriot" 
+terraform {
+  required_version = ">=1.15"
 
-    workspaces { 
-      name = "tejas-pyriot-workspace" 
-    } 
-  } 
+  cloud {
+        organization = "terraform-kyndryl-gcp"
+    workspaces {
+      name = "terraform-aws-cli"
+    }
+  }
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.47.0"
+    }
+    google = {
+        source = "hashicorp/google"
+    }
+  }
 }
+
 provider "aws" {
-    region = "ap-southeast-1"
-  
+  region = "ap-south-1"
 }
 
 data "aws_ami" "ubuntu" {
