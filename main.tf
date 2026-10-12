@@ -13,8 +13,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "6.47.0"
     }
-    
-  }
+     }
 
 
 provider "aws" {
