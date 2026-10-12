@@ -7,6 +7,7 @@ terraform {
       name = "terraform-lab"
     }
   }
+}
 
   required_providers {
     aws = {
