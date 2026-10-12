@@ -2,9 +2,9 @@ terraform {
   required_version = ">=1.15"
 
   cloud {
-        organization = "terraform-kyndryl-gcp"
+        organization = "Bilju-Kyndryl-Demo"
     workspaces {
-      name = "terraform-aws-cli"
+      name = "terraform-lab"
     }
   }
 
@@ -13,11 +13,9 @@ terraform {
       source  = "hashicorp/aws"
       version = "6.47.0"
     }
-    google = {
-        source = "hashicorp/google"
-    }
+    
   }
-}
+
 
 provider "aws" {
   region = "ap-south-1"
@@ -44,6 +42,6 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
   count = 3
   tags = {
-    Name = "HelloWorld-${count.index}"
+    Name = "Bilju-${count.index}"
   }
 }
