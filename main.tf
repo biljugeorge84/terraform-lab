@@ -42,6 +42,6 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
   count = 3
   tags = {
-    Name = "Bilju-${count.index}"
+    Name = "Bilju-tes-${count.index}"
   }
 }
